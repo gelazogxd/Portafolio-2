@@ -1,0 +1,15 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+  DETAIL GRANTGOAL VIEW
+{% endblock title %}
+
+
+{% block content %}
+
+<h1>Detalles del estadio</h1>
+  <p>Estadio: {{ Stadium.nombre }}</p>
+  <a href="{% url 'core:list3' %}" class="btn btn-outline-warning">Volver</a>
+  
+  
+{% endblock content %}
