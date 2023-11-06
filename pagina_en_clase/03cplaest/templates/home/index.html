@@ -1,0 +1,28 @@
+{% extends "base/base.html" %}
+
+
+
+
+{% block title %} Index View {% endblock title %}
+
+{% block content %}
+    
+    <h1>Hola {{ name }} Bienvido a Django XD</h1>
+    <button class="btn btn-outline-danger">Test Bootstrap</button>
+    <br>
+    <br><br>
+    <br><br>
+    <br>
+    <br>
+    <table class="table">
+        {% for i in name %}
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ name }}</td>
+            <td>1289</td>
+        </tr>  
+        {% endfor %}
+    </table>
+    
+    
+{% endblock content %}

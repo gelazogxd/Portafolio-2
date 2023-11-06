@@ -1,0 +1,38 @@
+
+
+{% extends 'base/base.html' %}
+
+{% block title %} LIST GRANT GOAL VIEW {% endblock title %}
+
+{% block content %}
+
+
+    <a href="{% url 'core:gg_create' %}" class="btn btn-outline-success form-control">Create a New GrantGoal</a>
+    <table class="table table-striped table-hover">
+        <thead>
+            <th>ID</th>
+            <th>GG TITLE</th>
+            <th>TIMESTAMP</th>
+            <th>DAYS DURATION</th>
+            <th>USER</th>
+            <th></th>
+            <th>ACTIONS</th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for gg in grant_goals %}
+                <tr>
+                    <td>{{ gg.id }}</td>
+                    <td>{{ gg.gg_title }}</td>
+                    <td>{{ gg.timestamp }}</td>
+                    <td>{{ gg.days_duration }}</td>
+                    <td>{{ gg.user }}</td>
+                    <td><a href="{% url 'core:gg_detail' gg.id %}" class="btn btn-outline-info"> Detail </a></td>
+                    <td><a href="{% url 'core:gg_update' gg.id %}" class="btn btn-outline-warning"> Update</a></td>
+                    <td><a href="{% url 'core:gg_delete' gg.id %}" class="btn btn-outline-danger">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   
+{% endblock content %}
